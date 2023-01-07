@@ -29,8 +29,11 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
+  // if (text.length < 30) {
+  //   text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+  // }
   return text.length < 30
-    ? "text"
+    ? text.slice(0, 30)
     : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
 
@@ -110,6 +113,7 @@ const createPost = (post) => {
                 </div>
 
                 <div class="post__content">${displayContent(
+                  // ${post.comments[0].text}
                   post.description
                 )}</div>
 
